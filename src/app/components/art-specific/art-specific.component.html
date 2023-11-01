@@ -1,0 +1,36 @@
+<div class="body pt-2">
+<mat-spinner *ngIf="isLoading" class="mx-auto" ></mat-spinner>
+<div class="container pb-5 " *ngIf="!isLoading" >
+    
+    
+    <div class="d-flex flex-column justify-content-canter align-items-center gap-4 flex-md-row" >
+        <img src="https://www.artic.edu/iiif/2/{{data.image_id}}/full/800,/0/default.jpg" width="350px" class="img-fluid"  height="auto"   alt="..."/>
+        <div class="d-flex flex-column justify-content-center">
+            <div class="display-5 text-start text-warning text-dark " style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">{{data.title}}</div>
+            <p class="text-start  text-primary h3 ">{{data.thumbnail?.alt_text}}</p>
+            <dl>
+                <dt>Artists</dt>
+                <dd *ngFor="let artist of data.artist_titles">{{artist}} </dd>
+                <dt>Categories</dt>
+                <dd *ngFor="let category of data.category_titles"> {{category}}</dd>
+                <dt>Start Year</dt>
+                <dd >{{data.date_start}} </dd>
+                <dt>End Year</dt>
+                <dd >{{data.date_end}} </dd>
+                
+            </dl>
+            
+        </div>
+    </div>
+
+
+    <h1 class="display-1 mt-2 headings" *ngIf="data.description!=null" >Description</h1>
+    <p class="para" *ngIf="data.description!=null">{{data.description}}</p>
+
+    <h1 class="display-1 mt-2 headings" *ngIf="data.publication_history!=null">Publication History</h1>
+    <p class=" para " *ngIf="data.publication_history!=null">{{data.publication_history}}</p>
+
+    <h1 class="display-1 mt-2 headings" *ngIf="data.exhibition_history!=null">Exhibition History</h1>
+    <p class=" para" *ngIf="data.exhibition_history!=null">{{data.exhibition_history}}</p>
+</div>
+</div>

@@ -1,0 +1,39 @@
+
+<div class="d-flex justify-content-center">
+<div class="card">
+    <p-galleria 
+    [value]="images"
+    [showItemNavigators]="true"
+    [thumbnailsPosition]="position"
+    [circular]="true"
+    [showThumbnailNavigators]="false"
+    [autoPlay]="true"
+
+    [responsiveOptions]="responsiveOptions"
+    [numVisible]="10">
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.itemImageSrc" style="width: 100%!important;height:100%;background-color: black;" />
+        </ng-template>
+        <ng-template height="100%" pTemplate="thumbnail" let-item >
+            <div class="d-flex grid-nogutter justify-content-around">
+                <img [src]="item.thumbnailImageSrc" height="50px"/>
+            </div>
+        </ng-template>
+    </p-galleria>
+</div>
+</div>
+
+<div class="p-5 bg-dark">
+    
+    <div class="lead text-light text-center mt-5 fs-3 lh-1">
+        
+            Home to a collection of art that spans centuries and the globe, the Art Institute of Chicago is located in the heart of the city—and is one of Tripadvisor’s “Best of the Best” US attractions of 2023.
+    </div>
+    <div class="lead text-light text-center mt-5 fs-3 lh-1">
+        Explore thousands of artworks in the museum’s collection—from our renowned icons to lesser-known works from every corner of the globe—as well as our books, writings, reference materials, and other resources.
+    </div>
+        
+    <p class="lead text-light text-center mt-5 fs-3 lh-1">
+        In addition to being a world-class museum, we are an institution whose academic origin proudly informs our mission. With that in mind, the Art Institute invites scholars, students, teachers, the curious and inspired, and learners of all sorts to take advantage of our world-class library and archives and make use of our research tools, study rooms, and opportunities to learn.
+    </p>
+</div>

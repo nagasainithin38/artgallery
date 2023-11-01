@@ -1,0 +1,19 @@
+<div class="d-flex flex-column justify-content-center  align-items-center">
+
+
+    <div class="bg-dark w-100 d-flex justify-content-center pb-2 ">
+        <form [formGroup]="searchForm" class="mt-2">
+            <div>
+                <input type="text" formControlName="query" placeholder="search " class="form-control  border-5">
+
+            </div>
+        </form>
+    </div>
+
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <div class="d-flex justify-content-around flex-wrap gap-3 p-3" *ngIf="isLoading==false">
+        <app-artworkdisplay *ngFor="let artwork of artworkData" (favouriteAltered)="favouriteAltered($event)"
+            [isFavourite]="findIsFavourite(artwork.id)" [artwork]="artwork"></app-artworkdisplay>
+    </div>
+    <app-paginator [paginatorLength]="paginatorLength" (pageChanged)="pageChanged($event)"></app-paginator>
+</div>

@@ -1,0 +1,17 @@
+.body{
+    
+    background-image: linear-gradient(#cfd9df,#e2ebf0) ;
+}
+
+.para{
+    font-family: none;
+    font-size: 20px;
+    line-height: 25px;
+    /* word-spacing: 2px; */
+}
+
+.headings{
+    color:blue;
+    font-weight: bolder;
+    font-size: 32px;
+}

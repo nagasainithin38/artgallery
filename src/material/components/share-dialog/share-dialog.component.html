@@ -1,0 +1,11 @@
+<div class="body">
+    
+
+  <input class="form-control" disabled type="text" [value]="data" #userinput>
+    <div class="d-flex gap-2 flex-wrap mt-3">
+
+      <button class="btn btn-primary" [disabled]="copied" (click)="copyToClipBoard(userinput)" value="click to copy" >{{title}}</button>
+      <button class="btn btn-primary" (click)="share()" >Share</button>
+      <button class="btn btn-danger" (click)="close()" >Close</button>    
+    </div>
+</div>

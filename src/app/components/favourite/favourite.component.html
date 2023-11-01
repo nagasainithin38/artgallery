@@ -1,0 +1,13 @@
+
+
+<div class="d-flex flex-column justify-content-center  align-items-center">
+
+
+    <div class="display-1 text-warning bg-danger" *ngIf="favIds.favouriteList.size==0" >Favourite List is Empty</div>
+
+    <mat-spinner *ngIf="isLoading&&favIds.favouriteList.size!=0" ></mat-spinner>
+    <div class="d-flex justify-content-around flex-wrap gap-3 p-3" *ngIf="isLoading==false">
+        <app-favourite-art   *ngFor="let artwork of artworkData;let index=index" (removeFromFavourite)="removeFromFavourite($event,index)"  [artwork]="artwork" ></app-favourite-art>
+    </div>
+ 
+</div>

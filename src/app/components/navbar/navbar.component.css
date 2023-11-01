@@ -1,0 +1,16 @@
+.active{
+    background-color: blue;
+    color:white!important;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+nav{
+    position: sticky;
+    top:0px;
+    z-index:100;
+}
+
+.nav-link{
+    padding:10px
+}

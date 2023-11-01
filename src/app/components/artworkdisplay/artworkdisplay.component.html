@@ -1,0 +1,38 @@
+<div class="card h-100">
+  <div class="text-center" style="width: 18rem;">
+    <div class="d-flex flex-column justify-content-center align-items-center bg-black"
+      [ngStyle]="{height:!loading?'0px':'250px'}">
+      <div class="spinner-border  text-warning" [ngStyle]="{display:!loading?'none':'block'}" role="status">
+      </div>
+    </div>
+
+    <img (load)="onLoad()" (error)="error()" [hidden]="loading"
+      src="https://www.artic.edu/iiif/2/{{artwork.image_id}}/full/800,/0/default.jpg" height="250px"
+      class="card-img-top placeholder-glow" alt="..." />
+    <div class="card-body">
+      <div class="d-flex flex-column align-items-start">
+        <div class="d-flex align-items-center justify-content-between w-100  pe-3 gap-2">
+
+          <h3 class="text-start  m-0" style="line-height: 20px;" (click)="clicked()">{{artwork.title}}</h3>
+
+          <div class="d-flex gap-2 align-items-center">
+
+            <img src="../../../assets/heart-regular.svg" class="icon" (click)="isFavouriteAltered()"
+            *ngIf="isFavourite==false" width="20px">
+            <img src="../../../assets/heart-solid.svg" class="icon" (click)="isFavouriteAltered()" *ngIf="isFavourite"
+            width="20px">
+            
+            <button class="btn  rounded-circle" (click)="openShare()">
+              
+              <mat-icon aria-hidden="false"  aria-label="Example home icon" fontIcon="share"></mat-icon>
+            </button>
+          </div>
+            
+        </div>
+        <p style="opacity: 0.5;" class="text-start mt-3">By: {{artwork.artist_display}}</p>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+

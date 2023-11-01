@@ -1,0 +1,12 @@
+<div class="text-center d-flex flex-column justify-content-between h-100 card pb-2" style="width: 18rem;">
+    <img src="https://www.artic.edu/iiif/2/{{artwork.image_id}}/full/800,/0/default.jpg" height="250px" class="card-img-top placeholder-glow" alt="..."/>
+   
+      <div class="d-flex flex-column align-items-center justify-content-between w-100 ps-3 pe-3 gap-2">
+        <h3 class="text-start  m-0" style="line-height: 20px;">{{artwork.title}}</h3>
+        <p style="opacity: 0.5;" class="text-start mt-0">By: {{artwork.artist_display}}</p>
+        <div class="d-flex gap-2">
+        <button class="btn btn-success" (click)="viewMore()">View More</button>
+        <button class="btn btn-danger" (click)="removeFromFav()" >Remove </button>
+      </div>
+      </div>
+  </div>
